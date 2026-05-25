@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero One Press Kit</title>
+  <meta name="description" content="Hero One press kit with videos, streaming analytics, reviews, radio support, and contact links.">
+  <style>
+    :root {
+      --ink: #111116;
+      --graphite: #19191f;
+      --steel: #252631;
+      --paper: #f6f0e5;
+      --muted: #b8b0a4;
+      --line: rgba(246, 240, 229, .14);
+      --gold: #d69d39;
+      --copper: #b6543e;
+      --teal: #39b7a6;
+      --blue: #517fc0;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .32);
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background:
+        linear-gradient(120deg, rgba(182, 84, 62, .16), transparent 34%),
+        linear-gradient(230deg, rgba(57, 183, 166, .12), transparent 38%),
+        var(--ink);
+      line-height: 1.55;
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 64px;
+      padding: 14px clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(17, 17, 22, .82);
+      backdrop-filter: blur(18px);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      width: clamp(150px, 17vw, 230px);
+      height: 50px;
+      overflow: hidden;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .brand img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2vw, 28px);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--paper); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      background: var(--gold);
+      color: #15100a;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #e7b65b; }
+    .button.ghost {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--paper);
+    }
+    .button.ghost:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
+
+    .hero {
+      min-height: calc(100svh - 64px);
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      align-items: stretch;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      padding: clamp(42px, 7vw, 92px) clamp(20px, 5vw, 68px);
+      border-right: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(214, 157, 57, .11), transparent 36%),
+        linear-gradient(25deg, rgba(81, 127, 192, .10), transparent 42%),
+        #15151b;
+    }
+    .eyebrow {
+      margin: 0;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 780px;
+      margin-bottom: 0;
+      color: #fff8ea;
+      font-size: clamp(60px, 12vw, 132px);
+      line-height: .83;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 0 10px 34px rgba(0, 0, 0, .38);
+    }
+    h1 span {
+      display: block;
+      color: var(--gold);
+    }
+    .lead {
+      max-width: 660px;
+      margin-bottom: 0;
+      color: #d7cfc1;
+      font-size: clamp(17px, 2vw, 21px);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .hero-stat {
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .025);
+    }
+    .hero-stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+    }
+    .hero-stat span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-media {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background: #09090c;
+    }
+    .hero-media video,
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-media video {
+      position: absolute;
+      inset: 0;
+      opacity: .88;
+    }
+    .hero-media img {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: screen;
+      opacity: .36;
+    }
+    .media-label {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      max-width: min(360px, calc(100% - 48px));
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(17, 17, 22, .78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+    .media-label strong {
+      display: block;
+      color: var(--paper);
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .media-label span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section {
+      padding: clamp(54px, 8vw, 104px) clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(280px, .5fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    h2 {
+      max-width: 920px;
+      margin-bottom: 0;
+      font-size: clamp(36px, 6vw, 76px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: rgba(255, 255, 255, .025);
+    }
+    .feature-strip article {
+      padding: clamp(22px, 3vw, 34px);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .feature-strip h3 {
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .feature-strip p { color: var(--muted); margin-bottom: 0; }
+
+    .analytics-grid,
+    .press-grid,
+    .review-grid,
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .panel {
+      background: var(--graphite);
+      overflow: hidden;
+    }
+    .panel-text { padding: 22px; }
+    .panel h3 {
+      margin-bottom: 8px;
+      font-size: clamp(21px, 2vw, 28px);
+      line-height: 1.1;
+    }
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+    .tag {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .asset-frame {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0c0c10;
+    }
+    .asset-frame.tall { aspect-ratio: 4 / 3; }
+    .asset-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .5s ease;
+    }
+    .panel:hover .asset-frame img { transform: scale(1.035); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 18px;
+      background: var(--line);
+    }
+    .metrics span {
+      display: block;
+      padding: 12px;
+      background: var(--steel);
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .metrics b {
+      display: block;
+      color: var(--paper);
+      font-size: 18px;
+    }
+
+    .spotlight {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 1px;
+      margin-bottom: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .spotlight .panel-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+      padding: clamp(26px, 5vw, 58px);
+    }
+    .spotlight h3 { font-size: clamp(30px, 4vw, 54px); }
+
+    .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .quote {
+      min-height: 100%;
+      padding: clamp(22px, 3vw, 34px);
+      background: var(--graphite);
+    }
+    .quote p {
+      margin-bottom: 20px;
+      color: var(--paper);
+      font-size: 18px;
+    }
+    .quote footer {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .industry {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .industry .panel-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(26px, 5vw, 58px);
+    }
+    .industry img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .video-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 9 / 12;
+      height: auto;
+      object-fit: cover;
+      background: #060609;
+    }
+    .video-card.featured {
+      grid-column: span 2;
+    }
+    .video-card.featured video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(300px, 1.1fr);
+      gap: 1px;
+      padding: 0;
+      background: var(--line);
+    }
+    .contact > div {
+      padding: clamp(32px, 6vw, 68px);
+      background: var(--graphite);
+    }
+    .contact-list {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .contact-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 18px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+    }
+    .contact-list a:hover { color: var(--gold); }
+    .contact-list span {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px clamp(18px, 4vw, 56px);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1020px) {
+      .nav-links { display: none; }
+      .hero,
+      .section-head,
+      .spotlight,
+      .industry,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      .hero-media { min-height: 62svh; }
+      .analytics-grid,
+      .press-grid,
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .video-card.featured { grid-column: span 2; }
+    }
+
+    @media (max-width: 680px) {
+      .nav { min-height: 58px; }
+      .button { width: 100%; }
+      .hero-actions,
+      .hero-stats,
+      .feature-strip,
+      .analytics-grid,
+      .press-grid,
+      .review-grid,
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-copy { padding-top: 34px; }
+      .hero-media { min-height: 430px; }
+      .hero-stat { padding: 15px; }
+      .video-card.featured { grid-column: auto; }
+      .video-card.featured video { aspect-ratio: 9 / 12; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Hero One home">
+      <img src="Hero One design no bg .png" alt="Hero One logo">
+    </a>
+    <div class="nav-links" aria-label="Primary navigation">
+      <a href="#analytics">Analytics</a>
+      <a href="#press">Press</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="button ghost" href="mailto:manuwaadebayo@gmail.com">Book</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Beats &amp; Blues Reality Music</p>
+        <h1>Hero <span>One</span></h1>
+        <p class="lead">Canadian artist and producer Adebayo Michael Manuwa builds a soulful trap, afrofusion, and modern hip-hop world made for streaming audiences, radio rooms, sync libraries, and live stages.</p>
+        <div class="hero-actions">
+          <a class="button" href="#press">View Press</a>
+          <a class="button ghost" href="#videos">Watch Videos</a>
+        </div>
+        <div class="hero-stats" aria-label="Hero One headline metrics">
+          <div class="hero-stat"><strong>319K+</strong><span>2025 Streams</span></div>
+          <div class="hero-stat"><strong>5,183%</strong><span>SoundCloud Growth</span></div>
+          <div class="hero-stat"><strong>90K</strong><span>Spotify via Symphonic</span></div>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="Hero One studio video">
+        <video autoplay muted loop playsinline poster="Hero One design.png">
+          <source src="S/Hero one on the beat with Ksa.mp4" type="video/mp4">
+        </video>
+        <img src="Hero One design.png" alt="Hero One artwork">
+        <div class="media-label">
+          <strong>Hero One on the beat</strong>
+          <span>Studio visual paired with the latest Hero One artwork.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="feature-strip reveal">
+        <article>
+          <h3>Artist</h3>
+          <p>Emotive writing, sharp melodic hooks, and a self-defined Beats &amp; Blues identity.</p>
+        </article>
+        <article>
+          <h3>Producer</h3>
+          <p>Textured percussion, afrofusion movement, trap swing, and film-friendly instrumental weight.</p>
+        </article>
+        <article>
+          <h3>Press Ready</h3>
+          <p>Streaming receipts, third-party reviews, radio support, and video assets in one local kit.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="analytics">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Streaming Analytics</p>
+          <h2>The numbers have shape.</h2>
+        </div>
+        <p>Year-to-date screenshots from Symphonic, SoundCloud, and oneRPM show a campaign moving across multiple channels instead of relying on one platform.</p>
+      </div>
+      <div class="analytics-grid reveal">
+        <article class="panel">
+          <div class="asset-frame">
+            <img src="Hero One Symphonic Jan 2025 - Dec 2025.png" alt="Hero One Symphonic analytics January to December 2025">
+          </div>
+          <div class="panel-text">
+            <span class="tag">Symphonic Distribution</span>
+            <h3>151,108 total streams</h3>
+            <p>Spotify, Apple Music, YouTube Art Tracks, and additional platforms with visible growth through the back half of 2025.</p>
+            <div class="metrics">
+              <span><b>90K</b>Spotify</span>
+              <span><b>53K</b>Apple</span>
+              <span><b>7.4K</b>YouTube</span>
+            </div>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame">
+            <img src="Hero One Soundcloud  YTD Jan - Dec 31 2025.png" alt="Hero One SoundCloud analytics January to December 2025">
+          </div>
+          <div class="panel-text">
+            <span class="tag">SoundCloud for Artists</span>
+            <h3>109,410 total plays</h3>
+            <p>Organic listenership, repost momentum, and one of the strongest growth signals in the folder.</p>
+            <div class="metrics">
+              <span><b>5,183%</b>Growth</span>
+              <span><b>86K</b>Streams</span>
+              <span><b>20K</b>Reposts</span>
+            </div>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame">
+            <img src="Hero One oneRPM YTD Jan - Dec 2025 .png" alt="Hero One oneRPM analytics January to December 2025">
+          </div>
+          <div class="panel-text">
+            <span class="tag">oneRPM Distribution</span>
+            <h3>59,268 total streams</h3>
+            <p>Full plays, daily average, and measurable catalog activity under Opulence Grandeur Sound.</p>
+            <div class="metrics">
+              <span><b>121%</b>Growth</span>
+              <span><b>56K</b>Full Plays</span>
+              <span><b>163</b>Daily Avg</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="press">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Press &amp; Features</p>
+          <h2>The world is listening.</h2>
+        </div>
+        <p>These clippings cover English and French editorial support, blog reviews, radio activity, and music discovery reactions for Hero One releases.</p>
+      </div>
+      <div class="spotlight reveal">
+        <div class="panel asset-frame tall">
+          <img src="ChuneDEsk article about Force on July 30 2025.png" alt="ChuneDesk article about Force by Hero One">
+        </div>
+        <div class="panel panel-text">
+          <span class="tag">Featured Review · ChuneDesk</span>
+          <h3>Force ft. Raybekah enters the press conversation.</h3>
+          <p>ChuneDesk highlighted the track as a powerful anthem with emotional clarity, soulful trap presence, and a message of self-respect.</p>
+        </div>
+      </div>
+      <div class="press-grid reveal">
+        <article class="panel">
+          <div class="asset-frame"><img src="FORCE EXTRAVAFRENCH.COM AUG 18 2025 in french.png" alt="Extravafrench article about Force"></div>
+          <div class="panel-text"><span class="tag">Extravafrench</span><h3>French music press</h3><p>International placement for Force with Raybekah and its afrofusion pulse.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="Lyrical Odyssey Article about Hero One August 5th 2025 contd.png" alt="Lyrical Odyssey article about Hero One"></div>
+          <div class="panel-text"><span class="tag">Lyrical Odyssey</span><h3>Genre-bending review</h3><p>A trap-soul writeup focused on production polish and emotional construction.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="theaspiringme as part of a radio show Faaji Friday 12192025.png" alt="Faa ji included in radio show"></div>
+          <div class="panel-text"><span class="tag">Radio Support</span><h3>Faa ji on KTRU</h3><p>Approved for a Friday radio show and positioned for wider broadcast discovery.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="Atlas De Música Faaji.png" alt="Atlas De Música feedback for Faa ji"></div>
+          <div class="panel-text"><span class="tag">Atlas De Música</span><h3>Curator support</h3><p>Spanish-language music discovery feedback recognizing the release presentation.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="Boulimique de Musique Faa ji.png" alt="Boulimique de Musique review for Faa ji"></div>
+          <div class="panel-text"><span class="tag">Boulimique de Musique</span><h3>French blog attention</h3><p>A review centered on Hero One's daring sound and Beats &amp; Blues identity.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="HypeHub Mag Faa ji.png" alt="HypeHub Mag review for Faa ji"></div>
+          <div class="panel-text"><span class="tag">HypeHub Mag</span><h3>Rhythm and emotion</h3><p>Coverage that reads Faa ji as both physical and emotionally direct.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Industry Reviews</p>
+          <h2>Third-party signals.</h2>
+        </div>
+        <p>Short quotes and screenshots from music supervisors, reviewers, and discovery outlets make the press kit usable for booking, sync, and outreach conversations.</p>
+      </div>
+      <div class="industry reveal">
+        <div class="panel">
+          <img src="Adonis Tsilimparis (Music Supervisor) listened to Faa ji.png" alt="Music supervisor Adonis Tsilimparis feedback about Faa ji">
+        </div>
+        <div class="panel-text">
+          <span class="tag">Sync &amp; Licensing</span>
+          <h3>TV-ready sound with a supervisor signal.</h3>
+          <p>Music supervisor Adonis Tsilimparis heard Faa ji as a potential background cue for television and recommended sending it to Heavy Hitters Music with an instrumental version.</p>
+        </div>
+      </div>
+      <div class="review-grid reveal" style="margin-top: 1px;">
+        <article class="quote">
+          <p>"The song has powerful energy and solid execution. Its unique and raw style makes it an intriguing piece."</p>
+          <footer>scannerFM</footer>
+        </article>
+        <article class="quote">
+          <p>"Faa ji stands out with its rhythmic intensity and emotional weight."</p>
+          <footer>HypeHub Magazine</footer>
+        </article>
+        <article class="quote">
+          <p>"Hero One's Faa ji is about celebration and freedom. It makes you feel positive and connected to others."</p>
+          <footer>Landon Buford</footer>
+        </article>
+        <article class="quote">
+          <p>"A daring artist who pushes boundaries and shapes a new soundscape he calls Beats &amp; Blues."</p>
+          <footer>Boulimique de Musique</footer>
+        </article>
+      </div>
+      <div class="press-grid reveal" style="margin-top: 1px;">
+        <article class="panel">
+          <div class="asset-frame"><img src="Faa ji ScannerFM.png" alt="scannerFM feedback for Faa ji"></div>
+          <div class="panel-text"><span class="tag">scannerFM</span><h3>Discovery platform approval</h3><p>A raw, unique, high-energy reaction to Faa ji.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="Landon Buford.png" alt="Landon Buford feedback for Faa ji"></div>
+          <div class="panel-text"><span class="tag">Landon Buford</span><h3>Positive audience energy</h3><p>Feedback connecting the release to celebration and movement.</p></div>
+        </article>
+        <article class="panel">
+          <div class="asset-frame"><img src="Hero One design.png" alt="Hero One design art"></div>
+          <div class="panel-text"><span class="tag">Brand Visual</span><h3>Hero One artwork</h3><p>Primary local design asset for outreach, posters, and digital presentation.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Video Assets</p>
+          <h2>Motion for the campaign.</h2>
+        </div>
+        <p>Campaign visuals for press, booking, and licensing review, from short-form clips to the full studio feature.</p>
+      </div>
+      <div class="video-grid reveal">
+        <article class="panel video-card featured">
+          <video controls preload="metadata" poster="Hero One design.png">
+            <source src="S/Hero one on the beat with Ksa.mp4" type="video/mp4">
+          </video>
+          <div class="panel-text"><span class="tag">Studio Video</span><h3>Hero One on the beat with Ksa</h3></div>
+        </article>
+        <article class="panel video-card">
+          <video controls muted loop preload="metadata">
+            <source src="S/1 ai.mp4" type="video/mp4">
+          </video>
+          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip I</h3></div>
+        </article>
+        <article class="panel video-card">
+          <video controls muted loop preload="metadata">
+            <source src="S/1 ai 2.mp4" type="video/mp4">
+          </video>
+          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip II</h3></div>
+        </article>
+        <article class="panel video-card">
+          <video controls muted loop preload="metadata">
+            <source src="S/1 ai 3.mp4" type="video/mp4">
+          </video>
+          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip III</h3></div>
+        </article>
+        <article class="panel video-card">
+          <video controls muted loop preload="metadata">
+            <source src="S/1 sip  ai.mp4" type="video/mp4">
+          </video>
+          <div class="panel-text"><span class="tag">Visual</span><h3>Sip Visual</h3></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Book, license, feature, or write.</h2>
+      </div>
+      <div class="reveal">
+        <div class="contact-list">
+          <a href="mailto:manuwaadebayo@gmail.com"><span>Email</span>manuwaadebayo@gmail.com</a>
+          <a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span>Spotify</span>Hero One</a>
+          <a href="https://music.apple.com/us/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span>Apple Music</span>Hero One</a>
+          <a href="https://soundcloud.com/heroone" target="_blank" rel="noreferrer"><span>SoundCloud</span>@heroone</a>
+          <a href="https://metameta3.com" target="_blank" rel="noreferrer"><span>Platform</span>metameta3.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Hero One Press Kit</strong>
+    <span>2026 · Beats &amp; Blues Reality Music · Millenial Renaissance Art Limited</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('on');
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
