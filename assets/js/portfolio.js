@@ -214,41 +214,6 @@
       });
     }
 
-    /* ── Motion Deck Video Controls ──────────────────────────────────── */
-    var videoFrames = document.querySelectorAll(".video-frame");
-    videoFrames.forEach(function (frame) {
-      var vid = frame.querySelector("video");
-      var control = frame.querySelector(".video-control");
-      if (!vid || !control) return;
-
-      control.addEventListener("click", function () {
-        if (vid.paused) {
-          vid.play().then(function () {
-            frame.classList.remove("is-paused");
-          }).catch(function () {});
-        } else {
-          vid.pause();
-          frame.classList.add("is-paused");
-        }
-      });
-
-      vid.addEventListener("play", function () { frame.classList.remove("is-paused"); });
-      vid.addEventListener("pause", function () { frame.classList.add("is-paused"); });
-    });
-
-    if ("IntersectionObserver" in window) {
-      var vidObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          var vid = entry.target.querySelector("video");
-          if (vid && !entry.isIntersecting && !vid.paused) {
-            vid.pause();
-          }
-        });
-      }, { threshold: 0.15 });
-
-      videoFrames.forEach(function (vf) { vidObserver.observe(vf); });
-    }
-
     window.__portfolioReady = true;
   }
 

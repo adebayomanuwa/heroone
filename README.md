@@ -36,11 +36,6 @@ assets/
     press/                  # Editorial clippings (ChuneDesk, Extravafrench, KTRU, etc.)
     reviews/                # Music supervisor appraisal (Adonis Tsilimparis)
     og-image.jpg            # Open Graph social preview card
-  video/
-    motion-ai-1.mp4         # AI Visual Motion Reel I
-    motion-ai-2.mp4         # Reality Music Kinetic Reel II
-    motion-ai-3.mp4         # Harmonic Lattice Signal III
-    motion-sip-ai.mp4       # Sip Narrative Visual IV
 ```
 
 ## Content Sections
@@ -51,7 +46,7 @@ assets/
 4. **Streaming Analytics**: Clickable receipts for Symphonic (151K+), SoundCloud (109K+), and oneRPM (59K+).
 5. **Press & Media Coverage**: Spotlight editorial for *Force ft. Raybekah* (ChuneDesk) and clippings across Extravafrench, Lyrical Odyssey, KTRU 96.1 FM, Atlas De Música, Boulimique de Musique, and HypeHub.
 6. **Industry & Sync Licensing**: Adonis Tsilimparis television background cue recommendation and 100% one-stop clearance blueprint.
-7. **Motion Campaign Deck**: Playable video visualizers.
+7. **Official YouTube Shorts**: High-engagement YouTube Shorts from `@hero-one` (LDCAT, The Mind is Your Highest Currency, TRANSACTION CONFIRMED, Big God).
 8. **Intellectual Property**: BMI, SoundExchange, Opulence Grandeur Sound, and Millenial Renaissance Art Limited.
 9. **Contact**: Direct booking desk and ecosystem links.
 

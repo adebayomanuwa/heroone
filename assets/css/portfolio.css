@@ -1035,14 +1035,14 @@ p {
   color: var(--gold-bright);
 }
 
-/* ── Motion & Videos ─────────────────────────────────────────────── */
-.video-grid {
+/* ── YouTube Shorts Deck ─────────────────────────────────────────── */
+.shorts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 
-.video-card {
+.short-card {
   border-radius: var(--radius);
   border: 1px solid var(--line);
   overflow: hidden;
@@ -1052,71 +1052,63 @@ p {
   transition: transform 0.4s var(--ease), border-color 0.4s;
 }
 
-.video-card:hover {
-  transform: translateY(-3px);
-  border-color: rgb(var(--gold-rgb) / 0.35);
+.short-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--gold-rgb) / 0.4);
 }
 
-.video-frame {
+.short-frame {
   position: relative;
+  width: 100%;
   aspect-ratio: 9 / 16;
   background: #020306;
   overflow: hidden;
+  border-bottom: 1px solid var(--line);
 }
 
-.video-frame video {
+.short-frame iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: 0;
+  display: block;
 }
 
-.video-control {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background: rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-
-.video-frame:hover .video-control,
-.video-frame.is-paused .video-control {
-  opacity: 1;
-}
-
-.play-bubble {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--ink);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s var(--spring);
-}
-
-.video-control:hover .play-bubble {
-  transform: scale(1.1);
-}
-
-.video-meta {
-  padding: 1.2rem;
+.short-meta {
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.45rem;
+  flex: 1;
 }
 
-.video-meta h4 {
+.short-meta h4 {
   font-size: 1.05rem;
   font-weight: 700;
+  line-height: 1.25;
 }
 
-.video-meta p {
-  font-size: 0.85rem;
-  color: var(--text-dim);
+.short-meta p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.short-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  transition: color 0.2s;
+}
+
+.short-link:hover {
+  color: #fff;
 }
 
 /* ── Registry ────────────────────────────────────────────────────── */
@@ -1477,7 +1469,7 @@ p {
   .quote-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .video-grid {
+  .shorts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .registry-grid {
@@ -1536,7 +1528,7 @@ p {
   .hero-telemetry {
     grid-template-columns: repeat(2, 1fr);
   }
-  .analytics-bento, .press-grid, .video-grid, .quote-grid, .registry-grid {
+  .analytics-bento, .press-grid, .shorts-grid, .quote-grid, .registry-grid {
     grid-template-columns: 1fr;
   }
   .doctrine-grid {
