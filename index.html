@@ -2,796 +2,869 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hero One Press Kit</title>
-  <meta name="description" content="Hero One press kit with videos, streaming analytics, reviews, radio support, and contact links.">
-  <style>
-    :root {
-      --ink: #111116;
-      --graphite: #19191f;
-      --steel: #252631;
-      --paper: #f6f0e5;
-      --muted: #b8b0a4;
-      --line: rgba(246, 240, 229, .14);
-      --gold: #d69d39;
-      --copper: #b6543e;
-      --teal: #39b7a6;
-      --blue: #517fc0;
-      --shadow: 0 24px 80px rgba(0, 0, 0, .32);
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06080f">
+  <title>Hero One · Press Kit &amp; Industry Portfolio · Beats &amp; Blues Reality Music</title>
+  <meta name="description" content="Official press kit, verified streaming receipts, press clippings, music supervisor endorsements, and visual assets for Hero One (Adebayo Michael Manuwa). Powered by 333BI OS.">
+  <meta name="author" content="Hero One">
+  <link rel="canonical" href="https://portfolio.heroone.art/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/brand/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.heroone.art/">
+  <meta property="og:site_name" content="Hero One Press Kit">
+  <meta property="og:title" content="Hero One · Press Kit & Industry Portfolio">
+  <meta property="og:description" content="Verified streaming receipts, editorial clippings, radio rotations, and sync signals for Beats & Blues Reality Music. Powered by 333BI OS.">
+  <meta property="og:image" content="https://portfolio.heroone.art/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@heromgn">
+  <meta name="twitter:image" content="https://portfolio.heroone.art/assets/img/og-image.jpg">
+  
+  <link rel="preload" href="/assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/img/brand/heroone-wordmark.webp" as="image">
+  
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--paper);
-      background:
-        linear-gradient(120deg, rgba(182, 84, 62, .16), transparent 34%),
-        linear-gradient(230deg, rgba(57, 183, 166, .12), transparent 38%),
-        var(--ink);
-      line-height: 1.55;
-    }
-    img, video { display: block; max-width: 100%; }
-    a { color: inherit; }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 64px;
-      padding: 14px clamp(18px, 4vw, 56px);
-      border-bottom: 1px solid var(--line);
-      background: rgba(17, 17, 22, .82);
-      backdrop-filter: blur(18px);
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      width: clamp(150px, 17vw, 230px);
-      height: 50px;
-      overflow: hidden;
-      font-weight: 900;
-      letter-spacing: .14em;
-      text-decoration: none;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .brand img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: left center;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 2vw, 28px);
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .nav-links a:hover { color: var(--paper); }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid transparent;
-      background: var(--gold);
-      color: #15100a;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-    }
-    .button:hover { transform: translateY(-2px); background: #e7b65b; }
-    .button.ghost {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--paper);
-    }
-    .button.ghost:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
-
-    .hero {
-      min-height: calc(100svh - 64px);
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      align-items: stretch;
-      border-bottom: 1px solid var(--line);
-    }
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 28px;
-      padding: clamp(42px, 7vw, 92px) clamp(20px, 5vw, 68px);
-      border-right: 1px solid var(--line);
-      background:
-        linear-gradient(145deg, rgba(214, 157, 57, .11), transparent 36%),
-        linear-gradient(25deg, rgba(81, 127, 192, .10), transparent 42%),
-        #15151b;
-    }
-    .eyebrow {
-      margin: 0;
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 780px;
-      margin-bottom: 0;
-      color: #fff8ea;
-      font-size: clamp(60px, 12vw, 132px);
-      line-height: .83;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      text-shadow: 0 10px 34px rgba(0, 0, 0, .38);
-    }
-    h1 span {
-      display: block;
-      color: var(--gold);
-    }
-    .lead {
-      max-width: 660px;
-      margin-bottom: 0;
-      color: #d7cfc1;
-      font-size: clamp(17px, 2vw, 21px);
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-    .hero-stat {
-      padding: 18px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, .025);
-    }
-    .hero-stat strong {
-      display: block;
-      color: var(--gold);
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1;
-    }
-    .hero-stat span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .hero-media {
-      position: relative;
-      min-height: 520px;
-      overflow: hidden;
-      background: #09090c;
-    }
-    .hero-media video,
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-media video {
-      position: absolute;
-      inset: 0;
-      opacity: .88;
-    }
-    .hero-media img {
-      position: absolute;
-      inset: 0;
-      mix-blend-mode: screen;
-      opacity: .36;
-    }
-    .media-label {
-      position: absolute;
-      right: 24px;
-      bottom: 24px;
-      max-width: min(360px, calc(100% - 48px));
-      padding: 18px;
-      border: 1px solid var(--line);
-      background: rgba(17, 17, 22, .78);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-    .media-label strong {
-      display: block;
-      color: var(--paper);
-      font-size: 13px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .media-label span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .section {
-      padding: clamp(54px, 8vw, 104px) clamp(18px, 4vw, 56px);
-      border-bottom: 1px solid var(--line);
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(280px, .5fr);
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 34px;
-    }
-    h2 {
-      max-width: 920px;
-      margin-bottom: 0;
-      font-size: clamp(36px, 6vw, 76px);
-      line-height: .95;
-      letter-spacing: 0;
-    }
-    .section-head p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .feature-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-      background: rgba(255, 255, 255, .025);
-    }
-    .feature-strip article {
-      padding: clamp(22px, 3vw, 34px);
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .feature-strip h3 {
-      color: var(--gold);
-      font-size: 16px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .feature-strip p { color: var(--muted); margin-bottom: 0; }
-
-    .analytics-grid,
-    .press-grid,
-    .review-grid,
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .panel {
-      background: var(--graphite);
-      overflow: hidden;
-    }
-    .panel-text { padding: 22px; }
-    .panel h3 {
-      margin-bottom: 8px;
-      font-size: clamp(21px, 2vw, 28px);
-      line-height: 1.1;
-    }
-    .panel p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-    .tag {
-      display: inline-flex;
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    .asset-frame {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: #0c0c10;
-    }
-    .asset-frame.tall { aspect-ratio: 4 / 3; }
-    .asset-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform .5s ease;
-    }
-    .panel:hover .asset-frame img { transform: scale(1.035); }
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: 18px;
-      background: var(--line);
-    }
-    .metrics span {
-      display: block;
-      padding: 12px;
-      background: var(--steel);
-      color: var(--muted);
-      font-size: 11px;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .metrics b {
-      display: block;
-      color: var(--paper);
-      font-size: 18px;
-    }
-
-    .spotlight {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
-      gap: 1px;
-      margin-bottom: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .spotlight .panel-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-      padding: clamp(26px, 5vw, 58px);
-    }
-    .spotlight h3 { font-size: clamp(30px, 4vw, 54px); }
-
-    .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .quote {
-      min-height: 100%;
-      padding: clamp(22px, 3vw, 34px);
-      background: var(--graphite);
-    }
-    .quote p {
-      margin-bottom: 20px;
-      color: var(--paper);
-      font-size: 18px;
-    }
-    .quote footer {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .industry {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .industry .panel-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(26px, 5vw, 58px);
-    }
-    .industry img {
-      width: 100%;
-      height: 100%;
-      min-height: 360px;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .video-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .video-card video {
-      width: 100%;
-      aspect-ratio: 9 / 12;
-      height: auto;
-      object-fit: cover;
-      background: #060609;
-    }
-    .video-card.featured {
-      grid-column: span 2;
-    }
-    .video-card.featured video {
-      aspect-ratio: 16 / 9;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(300px, 1.1fr);
-      gap: 1px;
-      padding: 0;
-      background: var(--line);
-    }
-    .contact > div {
-      padding: clamp(32px, 6vw, 68px);
-      background: var(--graphite);
-    }
-    .contact-list {
-      display: grid;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .contact-list a {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 16px 18px;
-      background: var(--ink);
-      color: var(--paper);
-      text-decoration: none;
-    }
-    .contact-list a:hover { color: var(--gold); }
-    .contact-list span {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 28px clamp(18px, 4vw, 56px);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal.on {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 1020px) {
-      .nav-links { display: none; }
-      .hero,
-      .section-head,
-      .spotlight,
-      .industry,
-      .contact {
-        grid-template-columns: 1fr;
-      }
-      .hero-media { min-height: 62svh; }
-      .analytics-grid,
-      .press-grid,
-      .video-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .video-card.featured { grid-column: span 2; }
-    }
-
-    @media (max-width: 680px) {
-      .nav { min-height: 58px; }
-      .button { width: 100%; }
-      .hero-actions,
-      .hero-stats,
-      .feature-strip,
-      .analytics-grid,
-      .press-grid,
-      .review-grid,
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-copy { padding-top: 34px; }
-      .hero-media { min-height: 430px; }
-      .hero-stat { padding: 15px; }
-      .video-card.featured { grid-column: auto; }
-      .video-card.featured video { aspect-ratio: 9 / 12; }
-      .footer { flex-direction: column; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Hero One",
+    "alternateName": "Adebayo Michael Manuwa",
+    "description": "Canadian artist and producer creating Beats & Blues Reality Music.",
+    "url": "https://portfolio.heroone.art/",
+    "image": "https://portfolio.heroone.art/assets/img/og-image.jpg",
+    "logo": "https://portfolio.heroone.art/assets/img/brand/heroone-wordmark.webp",
+    "genre": ["Beats & Blues", "Trap Soul", "Afrofusion"],
+    "sameAs": [
+      "https://heroone.art",
+      "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g",
+      "https://music.apple.com/us/artist/hero-one/1520370143",
+      "https://soundcloud.com/heroone",
+      "https://www.youtube.com/@hero-one",
+      "https://www.instagram.com/heromgn"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="#top" aria-label="Hero One home">
-      <img src="Hero One design no bg .png" alt="Hero One logo">
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- ── 333BI OS Glass Header ───────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <a class="brand-lockup" href="#top" aria-label="Hero One Portfolio home">
+      <img src="/assets/img/brand/heroone-wordmark.webp" alt="Hero One wordmark" width="82" height="24">
+      <span class="brand-badge">Press Kit · 333BI OS</span>
     </a>
-    <div class="nav-links" aria-label="Primary navigation">
+
+    <nav class="site-nav" aria-label="Portfolio sections">
       <a href="#analytics">Analytics</a>
       <a href="#press">Press</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#videos">Videos</a>
-      <a href="#contact">Contact</a>
+      <a href="#reviews">Sync &amp; Reviews</a>
+      <a href="#videos">Motion</a>
+      <a class="nav-outbound" href="https://heroone.art" target="_blank" rel="noopener">heroone.art ↗</a>
+      <a class="nav-outbound" href="https://heroone.art/music/" target="_blank" rel="noopener">Catalog ↗</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button--ghost button--sm" href="#contact">Contact</a>
+      <a class="button button--primary button--sm" href="mailto:manuwaadebayo@gmail.com?subject=Hero%20One%20Booking%20%2F%20Sync%20Inquiry">Book Artist</a>
+      <button class="menu-button" aria-label="Open navigation menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <a class="button ghost" href="mailto:manuwaadebayo@gmail.com">Book</a>
-  </nav>
+  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Beats &amp; Blues Reality Music</p>
-        <h1>Hero <span>One</span></h1>
-        <p class="lead">Canadian artist and producer Adebayo Michael Manuwa builds a soulful trap, afrofusion, and modern hip-hop world made for streaming audiences, radio rooms, sync libraries, and live stages.</p>
+  <main id="content">
+    <!-- ── Hero Section with WebGL Signal Field ─────────────────── -->
+    <section class="hero" id="top">
+      <div class="signal-field" data-signal-field aria-hidden="true">
+        <canvas id="signal-field-canvas"></canvas>
+      </div>
+
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot pulse-dot--teal"></span>
+          <span>333BI OS · Verified Industry Dossier</span>
+        </div>
+
+        <h1>
+          Beats &amp; Blues<br>
+          <span class="mm3-highlight">Reality Music</span>
+        </h1>
+
+        <p class="lead">
+          Canadian artist and producer <strong>Adebayo Michael Manuwa</strong> builds a soulful trap, afrofusion, and modern hip-hop soundscape engineered for streaming audiences, sync libraries, international broadcast rooms, and live stages.
+        </p>
+
         <div class="hero-actions">
-          <a class="button" href="#press">View Press</a>
-          <a class="button ghost" href="#videos">Watch Videos</a>
+          <a class="button button--primary" href="#analytics">
+            <span>Inspect Analytics</span>
+          </a>
+          <a class="button button--ghost" href="#press">
+            <span>Press Clippings</span>
+          </a>
+          <a class="button button--ghost" href="https://heroone.art" target="_blank" rel="noopener">
+            <span>Main Site (heroone.art) ↗</span>
+          </a>
         </div>
-        <div class="hero-stats" aria-label="Hero One headline metrics">
-          <div class="hero-stat"><strong>319K+</strong><span>2025 Streams</span></div>
-          <div class="hero-stat"><strong>5,183%</strong><span>SoundCloud Growth</span></div>
-          <div class="hero-stat"><strong>90K</strong><span>Spotify via Symphonic</span></div>
+
+        <div class="hero-telemetry" aria-label="Key campaign receipts">
+          <div class="telemetry-item">
+            <strong>319K+</strong>
+            <span>2025 Streams</span>
+          </div>
+          <div class="telemetry-item">
+            <strong>+5,183%</strong>
+            <span>SoundCloud Surge</span>
+          </div>
+          <div class="telemetry-item">
+            <strong>90K</strong>
+            <span>Spotify Streams</span>
+          </div>
+          <div class="telemetry-item">
+            <strong>121%</strong>
+            <span>oneRPM Growth</span>
+          </div>
         </div>
       </div>
-      <div class="hero-media" aria-label="Hero One studio video">
-        <video autoplay muted loop playsinline poster="Hero One design.png">
-          <source src="S/Hero one on the beat with Ksa.mp4" type="video/mp4">
-        </video>
-        <img src="Hero One design.png" alt="Hero One artwork">
-        <div class="media-label">
-          <strong>Hero One on the beat</strong>
-          <span>Studio visual paired with the latest Hero One artwork.</span>
+
+      <div class="hero-stage">
+        <div class="stage-card">
+          <div class="stage-media">
+            <img src="/assets/img/brand/heroone-design-poster.png" alt="Hero One Brand Artwork">
+            <div class="stage-overlay">
+              <div class="stage-meta">
+                <strong>Hero One Design Standard</strong>
+                <span>Opulence Grandeur Sound · 2026 Archive</span>
+              </div>
+            </div>
+          </div>
+          <div class="stage-chips">
+            <span class="chip chip--gold">BMI Registered</span>
+            <span class="chip chip--teal">SoundExchange</span>
+            <span class="chip">Heavy Hitters Cue</span>
+            <span class="chip">Faaji Friday KTRU</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="feature-strip reveal">
-        <article>
-          <h3>Artist</h3>
-          <p>Emotive writing, sharp melodic hooks, and a self-defined Beats &amp; Blues identity.</p>
-        </article>
-        <article>
-          <h3>Producer</h3>
-          <p>Textured percussion, afrofusion movement, trap swing, and film-friendly instrumental weight.</p>
-        </article>
-        <article>
-          <h3>Press Ready</h3>
-          <p>Streaming receipts, third-party reviews, radio support, and video assets in one local kit.</p>
-        </article>
+    <!-- ── Live Telemetry Ticker ─────────────────────────────────── -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>SYMPHONIC DISTRIBUTION · 151,108 STREAMS <i></i></span>
+        <span>SOUNDCLOUD FOR ARTISTS · 109,410 PLAYS · +5,183% SURGE <i></i></span>
+        <span>ONERPM · 59,268 PLAYS · 121% YEAR GROWTH <i></i></span>
+        <span>CHUNEDESK EDITORIAL SUPPORT · FORCE FT. RAYBEKAH <i></i></span>
+        <span>EXTRAVAFRENCH · FRENCH MUSIC PRESS RECOGNITION <i></i></span>
+        <span>KTRU 96.1 FM · FAAJI FRIDAY BROADCAST ROTATION <i></i></span>
+        <span>ADONIS TSILIMPARIS · TV BACKGROUND CUE RECOMMENDATION <i></i></span>
+        <span>ATLAS DE MÚSICA · SPANISH CURATOR APPROVAL <i></i></span>
+        <span>BOULIMIQUE DE MUSIQUE · BEATS &amp; BLUES CRITICAL ACCLAIM <i></i></span>
+        <span>HYPEHUB MAG · RHYTHMIC INTENSITY &amp; EMOTION <i></i></span>
+        <!-- Repeated track for seamless loop -->
+        <span>SYMPHONIC DISTRIBUTION · 151,108 STREAMS <i></i></span>
+        <span>SOUNDCLOUD FOR ARTISTS · 109,410 PLAYS · +5,183% SURGE <i></i></span>
+        <span>ONERPM · 59,268 PLAYS · 121% YEAR GROWTH <i></i></span>
+        <span>CHUNEDESK EDITORIAL SUPPORT · FORCE FT. RAYBEKAH <i></i></span>
+        <span>EXTRAVAFRENCH · FRENCH MUSIC PRESS RECOGNITION <i></i></span>
+        <span>KTRU 96.1 FM · FAAJI FRIDAY BROADCAST ROTATION <i></i></span>
+        <span>ADONIS TSILIMPARIS · TV BACKGROUND CUE RECOMMENDATION <i></i></span>
       </div>
-    </section>
+    </div>
 
-    <section class="section" id="analytics">
-      <div class="section-head reveal">
+    <!-- ── Doctrine & Identity Pillars ──────────────────────────── -->
+    <section class="section" id="identity">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">Streaming Analytics</p>
+          <div class="mm3-eyebrow-tag">Operational Blueprint</div>
+          <h2>Constructed for longevity and scale.</h2>
+        </div>
+        <p>Hero One operates as an integrated creative engine: self-produced records, international discovery proof, and clear rights ownership designed for modern music executives, sync supervisors, and global audiences.</p>
+      </div>
+
+      <ul class="doctrine-grid">
+        <li>
+          <div class="step-num">01 / ARTIST</div>
+          <strong>Vocal &amp; Lyrical Depth</strong>
+          <p>Emotive delivery, poignant storytelling, sharp melodic hooks, and a grounded Beats &amp; Blues reality music philosophy that resonates across borders.</p>
+        </li>
+        <li>
+          <div class="step-num">02 / PRODUCER</div>
+          <strong>Acoustic Architecture</strong>
+          <p>Textured West African percussion, atmospheric trap swing, warm analog bass, and cinematic dynamics engineered for pristine spatial separation.</p>
+        </li>
+        <li>
+          <div class="step-num">03 / INTERNATIONAL</div>
+          <strong>Cross-Lingual Pull</strong>
+          <p>Measurable press attention across English, French, and Spanish editorial outlets, paired with broadcast college radio support in tier-1 markets.</p>
+        </li>
+        <li>
+          <div class="step-num">04 / SYNC READY</div>
+          <strong>Supervisor Approved</strong>
+          <p>Direct placement endorsements for television cues, clean stems, instrumental arrangements, and 100% master and publishing clarity.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ── Streaming Analytics Receipts ──────────────────────────── -->
+    <section class="section" id="analytics">
+      <div class="section-head">
+        <div>
+          <div class="mm3-eyebrow-tag">Audience Telemetry</div>
           <h2>The numbers have shape.</h2>
         </div>
-        <p>Year-to-date screenshots from Symphonic, SoundCloud, and oneRPM show a campaign moving across multiple channels instead of relying on one platform.</p>
+        <p>Year-to-date screenshots from Symphonic, SoundCloud for Artists, and oneRPM prove campaign momentum moving simultaneously across DSPs, community hubs, and long-tail catalog streams. <em>Click any receipt to inspect at full resolution.</em></p>
       </div>
-      <div class="analytics-grid reveal">
-        <article class="panel">
-          <div class="asset-frame">
-            <img src="Hero One Symphonic Jan 2025 - Dec 2025.png" alt="Hero One Symphonic analytics January to December 2025">
+
+      <div class="analytics-bento">
+        <!-- Symphonic Card -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/analytics/symphonic-2025.png"
+               data-full="/assets/img/analytics/symphonic-2025.png"
+               data-title="Symphonic Distribution Analytics"
+               data-category="DSP Distribution Receipt"
+               data-outlet="Symphonic for Artists"
+               data-date="Jan – Dec 2025"
+               data-metric="151,108 Total Streams"
+               data-description="151,108 total streams across Spotify, Apple Music, YouTube Art Tracks, and global platforms with steep listener growth in the second half of 2025.">
+            <img src="/assets/img/analytics/symphonic-2025.png" alt="Symphonic analytics showing 151,108 streams" loading="lazy">
+            <span class="receipt-badge">Inspect Receipt ↗</span>
           </div>
-          <div class="panel-text">
-            <span class="tag">Symphonic Distribution</span>
-            <h3>151,108 total streams</h3>
-            <p>Spotify, Apple Music, YouTube Art Tracks, and additional platforms with visible growth through the back half of 2025.</p>
-            <div class="metrics">
-              <span><b>90K</b>Spotify</span>
-              <span><b>53K</b>Apple</span>
-              <span><b>7.4K</b>YouTube</span>
+
+          <span class="kicker">Global DSP Distribution</span>
+          <h3>151,108 Total Streams</h3>
+          <p>Spotify, Apple Music, and YouTube Art Tracks showing continuous listener acquisition across North American and international DSP territories.</p>
+
+          <div class="metric-strip">
+            <div class="metric-cell">
+              <b>90,471</b>
+              <span>Spotify</span>
+            </div>
+            <div class="metric-cell">
+              <b>53,190</b>
+              <span>Apple Music</span>
+            </div>
+            <div class="metric-cell">
+              <b>7,447</b>
+              <span>YouTube</span>
             </div>
           </div>
         </article>
-        <article class="panel">
-          <div class="asset-frame">
-            <img src="Hero One Soundcloud  YTD Jan - Dec 31 2025.png" alt="Hero One SoundCloud analytics January to December 2025">
+
+        <!-- SoundCloud Card -->
+        <article class="card card--teal">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/analytics/soundcloud-2025.png"
+               data-full="/assets/img/analytics/soundcloud-2025.png"
+               data-title="SoundCloud for Artists Telemetry"
+               data-category="Community & Viral Receipt"
+               data-outlet="SoundCloud Creator Portal"
+               data-date="Jan – Dec 31, 2025"
+               data-metric="109,410 Plays · +5,183% Surge"
+               data-description="109,410 total plays powered by grassroots listener discovery, repost velocity, and an unprecedented +5,183% year-over-year audience surge.">
+            <img src="/assets/img/analytics/soundcloud-2025.png" alt="SoundCloud analytics showing 109,410 plays and 5,183% growth" loading="lazy">
+            <span class="receipt-badge">Inspect Receipt ↗</span>
           </div>
-          <div class="panel-text">
-            <span class="tag">SoundCloud for Artists</span>
-            <h3>109,410 total plays</h3>
-            <p>Organic listenership, repost momentum, and one of the strongest growth signals in the folder.</p>
-            <div class="metrics">
-              <span><b>5,183%</b>Growth</span>
-              <span><b>86K</b>Streams</span>
-              <span><b>20K</b>Reposts</span>
+
+          <span class="kicker">Organic &amp; Grassroots Velocity</span>
+          <h3>109,410 Total Plays</h3>
+          <p>Unfiltered community listener retention, high repost ratios, and an exponential 5,183% audience expansion throughout 2025.</p>
+
+          <div class="metric-strip">
+            <div class="metric-cell">
+              <b>+5,183%</b>
+              <span>Growth</span>
+            </div>
+            <div class="metric-cell">
+              <b>86,224</b>
+              <span>Streams</span>
+            </div>
+            <div class="metric-cell">
+              <b>20,111</b>
+              <span>Reposts</span>
             </div>
           </div>
         </article>
-        <article class="panel">
-          <div class="asset-frame">
-            <img src="Hero One oneRPM YTD Jan - Dec 2025 .png" alt="Hero One oneRPM analytics January to December 2025">
+
+        <!-- oneRPM Card -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/analytics/onerpm-2025.png"
+               data-full="/assets/img/analytics/onerpm-2025.png"
+               data-title="oneRPM Distribution Receipts"
+               data-category="Catalog Longevity Receipt"
+               data-outlet="oneRPM Analytics Hub"
+               data-date="Jan – Dec 2025"
+               data-metric="59,268 Streams · +121% Growth"
+               data-description="59,268 total streams with a 94.6% full-play completion rate under the Opulence Grandeur Sound imprint.">
+            <img src="/assets/img/analytics/onerpm-2025.png" alt="oneRPM analytics showing 59,268 streams" loading="lazy">
+            <span class="receipt-badge">Inspect Receipt ↗</span>
           </div>
-          <div class="panel-text">
-            <span class="tag">oneRPM Distribution</span>
-            <h3>59,268 total streams</h3>
-            <p>Full plays, daily average, and measurable catalog activity under Opulence Grandeur Sound.</p>
-            <div class="metrics">
-              <span><b>121%</b>Growth</span>
-              <span><b>56K</b>Full Plays</span>
-              <span><b>163</b>Daily Avg</span>
+
+          <span class="kicker">Catalog &amp; Completion Rate</span>
+          <h3>59,268 Total Streams</h3>
+          <p>Remarkable listener retention with 56,120 full plays, steady daily rotation, and a 121% increase in catalog stream longevity.</p>
+
+          <div class="metric-strip">
+            <div class="metric-cell">
+              <b>+121%</b>
+              <span>Year Growth</span>
+            </div>
+            <div class="metric-cell">
+              <b>56,120</b>
+              <span>Full Plays</span>
+            </div>
+            <div class="metric-cell">
+              <b>163</b>
+              <span>Daily Avg</span>
             </div>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- ── Press & Media Coverage ────────────────────────────────── -->
     <section class="section" id="press">
-      <div class="section-head reveal">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">Press &amp; Features</p>
+          <div class="mm3-eyebrow-tag">Editorial &amp; Broadcast</div>
           <h2>The world is listening.</h2>
         </div>
-        <p>These clippings cover English and French editorial support, blog reviews, radio activity, and music discovery reactions for Hero One releases.</p>
+        <p>Press clippings across English, French, and Spanish editorial rooms, college broadcast radio rotations, and tastemaker platform writeups. <em>Click any clipping to view the full document.</em></p>
       </div>
-      <div class="spotlight reveal">
-        <div class="panel asset-frame tall">
-          <img src="ChuneDEsk article about Force on July 30 2025.png" alt="ChuneDesk article about Force by Hero One">
+
+      <!-- Spotlight Feature: ChuneDesk -->
+      <div class="press-spotlight">
+        <div class="receipt-frame"
+             style="margin-bottom: 0;"
+             data-receipt
+             data-src="/assets/img/press/chunedesk-force-2025.png"
+             data-full="/assets/img/press/chunedesk-force-2025.png"
+             data-title="ChuneDesk Featured Editorial: Force ft. Raybekah"
+             data-category="Lead Editorial Review"
+             data-outlet="ChuneDesk"
+             data-date="July 30, 2025"
+             data-metric="Lead Review Feature"
+             data-description="ChuneDesk lauded 'Force ft. Raybekah' as a definitive soulful trap anthem delivering emotional clarity, commanding presence, and a poignant message of self-respect.">
+          <img src="/assets/img/press/chunedesk-force-2025.png" alt="ChuneDesk article on Force ft. Raybekah">
+          <span class="receipt-badge">Read Full Review ↗</span>
         </div>
-        <div class="panel panel-text">
-          <span class="tag">Featured Review · ChuneDesk</span>
-          <h3>Force ft. Raybekah enters the press conversation.</h3>
-          <p>ChuneDesk highlighted the track as a powerful anthem with emotional clarity, soulful trap presence, and a message of self-respect.</p>
+        <div>
+          <span class="kicker">Featured Editorial · ChuneDesk</span>
+          <h3 style="font-size: clamp(1.6rem, 2.4vw, 2.2rem); margin: 0.6rem 0 1rem;">Force ft. Raybekah enters the international press conversation.</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            ChuneDesk highlighted Hero One's collaborative release as a commanding anthem marked by emotional transparency, West African rhythmic cadence, and an unyielding message of self-respect and dignity.
+          </p>
+          <div class="chip-row">
+            <span class="chip chip--gold">Trap-Soul Anthem</span>
+            <span class="chip chip--teal">Afrofusion Cadence</span>
+            <span class="chip">Editorial Pick</span>
+          </div>
         </div>
       </div>
-      <div class="press-grid reveal">
-        <article class="panel">
-          <div class="asset-frame"><img src="FORCE EXTRAVAFRENCH.COM AUG 18 2025 in french.png" alt="Extravafrench article about Force"></div>
-          <div class="panel-text"><span class="tag">Extravafrench</span><h3>French music press</h3><p>International placement for Force with Raybekah and its afrofusion pulse.</p></div>
+
+      <!-- Press Bento Grid -->
+      <div class="press-grid">
+        <!-- Extravafrench -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/extravafrench-force-2025.png"
+               data-full="/assets/img/press/extravafrench-force-2025.png"
+               data-title="Extravafrench Review (France)"
+               data-category="French Music Press"
+               data-outlet="Extravafrench.com"
+               data-date="August 18, 2025"
+               data-metric="International Editorial"
+               data-description="French music publication Extravafrench praised Force for its cross-continental afrofusion rhythm and magnetic melodic construction.">
+            <img src="/assets/img/press/extravafrench-force-2025.png" alt="Extravafrench French press on Force" loading="lazy">
+            <span class="receipt-badge">Inspect Clipping ↗</span>
+          </div>
+          <span class="kicker">Extravafrench · Paris, France</span>
+          <h3>French Music Press</h3>
+          <p>International placement for <em>Force</em> highlighting cross-continental afrofusion rhythm and bilingual appeal.</p>
         </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="Lyrical Odyssey Article about Hero One August 5th 2025 contd.png" alt="Lyrical Odyssey article about Hero One"></div>
-          <div class="panel-text"><span class="tag">Lyrical Odyssey</span><h3>Genre-bending review</h3><p>A trap-soul writeup focused on production polish and emotional construction.</p></div>
+
+        <!-- Lyrical Odyssey -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/lyrical-odyssey-2025.png"
+               data-full="/assets/img/press/lyrical-odyssey-2025.png"
+               data-title="Lyrical Odyssey In-Depth Review"
+               data-category="Music Criticism"
+               data-outlet="Lyrical Odyssey"
+               data-date="August 5, 2025"
+               data-metric="Genre-Bending Analysis"
+               data-description="In-depth critique centered on Hero One's production polish, dynamic frequency management, and emotional architecture.">
+            <img src="/assets/img/press/lyrical-odyssey-2025.png" alt="Lyrical Odyssey article on Hero One" loading="lazy">
+            <span class="receipt-badge">Inspect Clipping ↗</span>
+          </div>
+          <span class="kicker">Lyrical Odyssey</span>
+          <h3>Genre-Bending Analysis</h3>
+          <p>A trap-soul review focused on production polish, acoustic separation, and emotional songwriting structure.</p>
         </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="theaspiringme as part of a radio show Faaji Friday 12192025.png" alt="Faa ji included in radio show"></div>
-          <div class="panel-text"><span class="tag">Radio Support</span><h3>Faa ji on KTRU</h3><p>Approved for a Friday radio show and positioned for wider broadcast discovery.</p></div>
+
+        <!-- KTRU Radio -->
+        <article class="card card--teal">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/ktru-faaji-friday-radio.png"
+               data-full="/assets/img/press/ktru-faaji-friday-radio.png"
+               data-title="KTRU 96.1 FM Radio Rotation Proof"
+               data-category="Broadcast Radio"
+               data-outlet="KTRU 96.1 FM Houston"
+               data-date="December 19, 2025"
+               data-metric="Radio Airplay"
+               data-description="Hero One's 'Faa ji' officially placed into broadcast rotation by theaspiringme for Faaji Friday radio programming.">
+            <img src="/assets/img/press/ktru-faaji-friday-radio.png" alt="KTRU Radio Show Faaji Friday proof" loading="lazy">
+            <span class="receipt-badge">Inspect Proof ↗</span>
+          </div>
+          <span class="kicker">KTRU 96.1 FM Broadcast</span>
+          <h3>Faa ji on College Radio</h3>
+          <p>Curated by <em>theaspiringme</em> for Friday broadcast rotation, establishing physical radio discovery.</p>
         </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="Atlas De Música Faaji.png" alt="Atlas De Música feedback for Faa ji"></div>
-          <div class="panel-text"><span class="tag">Atlas De Música</span><h3>Curator support</h3><p>Spanish-language music discovery feedback recognizing the release presentation.</p></div>
+
+        <!-- Atlas De Música -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/atlas-de-musica-faaji.png"
+               data-full="/assets/img/press/atlas-de-musica-faaji.png"
+               data-title="Atlas De Música Curator Appraisal"
+               data-category="Spanish-Language Discovery"
+               data-outlet="Atlas De Música"
+               data-date="2025 Campaign"
+               data-metric="Tastemaker Approved"
+               data-description="Spanish curator feedback recognizing Hero One's vocal delivery and acoustic depth on Faa ji.">
+            <img src="/assets/img/press/atlas-de-musica-faaji.png" alt="Atlas De Música Spanish review for Faa ji" loading="lazy">
+            <span class="receipt-badge">Inspect Clipping ↗</span>
+          </div>
+          <span class="kicker">Atlas De Música</span>
+          <h3>Spanish Curator Support</h3>
+          <p>Spanish-language discovery platform recognizing release presentation, vocal grit, and rhythm.</p>
         </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="Boulimique de Musique Faa ji.png" alt="Boulimique de Musique review for Faa ji"></div>
-          <div class="panel-text"><span class="tag">Boulimique de Musique</span><h3>French blog attention</h3><p>A review centered on Hero One's daring sound and Beats &amp; Blues identity.</p></div>
+
+        <!-- Boulimique de Musique -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/boulimique-de-musique-faaji.png"
+               data-full="/assets/img/press/boulimique-de-musique-faaji.png"
+               data-title="Boulimique de Musique Critique"
+               data-category="Independent Criticism"
+               data-outlet="Boulimique de Musique"
+               data-date="2025 Review"
+               data-metric="Editorial Acclaim"
+               data-description="Boulimique de Musique praised Hero One as a daring artist shaping a new soundscape he calls Beats & Blues.">
+            <img src="/assets/img/press/boulimique-de-musique-faaji.png" alt="Boulimique de Musique French review" loading="lazy">
+            <span class="receipt-badge">Inspect Clipping ↗</span>
+          </div>
+          <span class="kicker">Boulimique de Musique</span>
+          <h3>French Blog Attention</h3>
+          <p>A glowing review declaring Hero One <em>"a daring artist shaping a new soundscape he calls Beats &amp; Blues."</em></p>
         </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="HypeHub Mag Faa ji.png" alt="HypeHub Mag review for Faa ji"></div>
-          <div class="panel-text"><span class="tag">HypeHub Mag</span><h3>Rhythm and emotion</h3><p>Coverage that reads Faa ji as both physical and emotionally direct.</p></div>
+
+        <!-- HypeHub Mag -->
+        <article class="card">
+          <div class="receipt-frame"
+               data-receipt
+               data-src="/assets/img/press/hypehub-mag-faaji.png"
+               data-full="/assets/img/press/hypehub-mag-faaji.png"
+               data-title="HypeHub Magazine Review"
+               data-category="Culture Publication"
+               data-outlet="HypeHub Magazine"
+               data-date="2025 Feature"
+               data-metric="Editorial Spotlight"
+               data-description="HypeHub Magazine highlighted Faa ji for its distinct rhythmic intensity and physical emotional resonance.">
+            <img src="/assets/img/press/hypehub-mag-faaji.png" alt="HypeHub Mag review for Faa ji" loading="lazy">
+            <span class="receipt-badge">Inspect Clipping ↗</span>
+          </div>
+          <span class="kicker">HypeHub Magazine</span>
+          <h3>Rhythm &amp; Emotional Weight</h3>
+          <p>Coverage recognizing <em>Faa ji</em> as simultaneously dancefloor-ready and emotionally poignant.</p>
         </article>
       </div>
     </section>
 
+    <!-- ── Industry & Sync Licensing ─────────────────────────────── -->
     <section class="section" id="reviews">
-      <div class="section-head reveal">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">Industry Reviews</p>
-          <h2>Third-party signals.</h2>
+          <div class="mm3-eyebrow-tag">Sync &amp; Television Clearance</div>
+          <h2>Vetted for screen and sync.</h2>
         </div>
-        <p>Short quotes and screenshots from music supervisors, reviewers, and discovery outlets make the press kit usable for booking, sync, and outreach conversations.</p>
+        <p>Direct evaluation from veteran music supervisors and sync taste-makers verifying acoustic suitability for film, television, and game placements.</p>
       </div>
-      <div class="industry reveal">
-        <div class="panel">
-          <img src="Adonis Tsilimparis (Music Supervisor) listened to Faa ji.png" alt="Music supervisor Adonis Tsilimparis feedback about Faa ji">
-        </div>
-        <div class="panel-text">
-          <span class="tag">Sync &amp; Licensing</span>
-          <h3>TV-ready sound with a supervisor signal.</h3>
-          <p>Music supervisor Adonis Tsilimparis heard Faa ji as a potential background cue for television and recommended sending it to Heavy Hitters Music with an instrumental version.</p>
-        </div>
+
+      <div class="sync-deck">
+        <!-- Adonis Tsilimparis Card -->
+        <article class="card card--feature">
+          <div class="supervisor-card">
+            <div class="supervisor-img"
+                 data-receipt
+                 data-src="/assets/img/reviews/adonis-tsilimparis-supervisor.png"
+                 data-full="/assets/img/reviews/adonis-tsilimparis-supervisor.png"
+                 data-title="Adonis Tsilimparis Music Supervisor Appraisal"
+                 data-category="Sync & Television Signal"
+                 data-outlet="Industry Music Supervisor"
+                 data-date="2025 Evaluation"
+                 data-metric="TV Cue Recommendation"
+                 data-description="Veteran music supervisor Adonis Tsilimparis identified Faa ji as a high-potential television background cue and recommended delivery to Heavy Hitters Music.">
+              <img src="/assets/img/reviews/adonis-tsilimparis-supervisor.png" alt="Music supervisor Adonis Tsilimparis feedback receipt">
+            </div>
+            <div>
+              <span class="kicker">Sync Supervisor Signal</span>
+              <h3>Adonis Tsilimparis</h3>
+              <p>Veteran TV/Film music supervisor and composer evaluated <em>Faa ji</em> as a prime background cue for television, recommending immediate delivery to Heavy Hitters Music with instrumental stems.</p>
+              <div class="chip-row">
+                <span class="chip chip--gold">TV Background Cue</span>
+                <span class="chip chip--teal">Heavy Hitters Ready</span>
+                <span class="chip">Stems Available</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rights Clearance Blueprint -->
+        <article class="card">
+          <span class="kicker">Master &amp; Publishing Administration</span>
+          <h3>100% Cleared Rights</h3>
+          <p>All compositions, recordings, and underlying master rights are administered through <strong>Opulence Grandeur Sound</strong> and <strong>Millenial Renaissance Art Limited</strong>. Immediate one-stop sync clearance without third-party encumbrances.</p>
+          <div class="chip-row">
+            <span class="chip chip--gold">One-Stop Clearance</span>
+            <span class="chip chip--teal">BMI Affiliated</span>
+            <span class="chip">SoundExchange Registered</span>
+            <span class="chip">Clean Instrumentals</span>
+          </div>
+        </article>
       </div>
-      <div class="review-grid reveal" style="margin-top: 1px;">
-        <article class="quote">
-          <p>"The song has powerful energy and solid execution. Its unique and raw style makes it an intriguing piece."</p>
-          <footer>scannerFM</footer>
-        </article>
-        <article class="quote">
-          <p>"Faa ji stands out with its rhythmic intensity and emotional weight."</p>
-          <footer>HypeHub Magazine</footer>
-        </article>
-        <article class="quote">
-          <p>"Hero One's Faa ji is about celebration and freedom. It makes you feel positive and connected to others."</p>
-          <footer>Landon Buford</footer>
-        </article>
-        <article class="quote">
+
+      <!-- Pull Quote Grid -->
+      <div class="quote-grid">
+        <div class="quote-card">
           <p>"A daring artist who pushes boundaries and shapes a new soundscape he calls Beats &amp; Blues."</p>
           <footer>Boulimique de Musique</footer>
-        </article>
-      </div>
-      <div class="press-grid reveal" style="margin-top: 1px;">
-        <article class="panel">
-          <div class="asset-frame"><img src="Faa ji ScannerFM.png" alt="scannerFM feedback for Faa ji"></div>
-          <div class="panel-text"><span class="tag">scannerFM</span><h3>Discovery platform approval</h3><p>A raw, unique, high-energy reaction to Faa ji.</p></div>
-        </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="Landon Buford.png" alt="Landon Buford feedback for Faa ji"></div>
-          <div class="panel-text"><span class="tag">Landon Buford</span><h3>Positive audience energy</h3><p>Feedback connecting the release to celebration and movement.</p></div>
-        </article>
-        <article class="panel">
-          <div class="asset-frame"><img src="Hero One design.png" alt="Hero One design art"></div>
-          <div class="panel-text"><span class="tag">Brand Visual</span><h3>Hero One artwork</h3><p>Primary local design asset for outreach, posters, and digital presentation.</p></div>
-        </article>
+        </div>
+        <div class="quote-card">
+          <p>"The song has powerful energy and solid execution. Its unique and raw style makes it an intriguing piece."</p>
+          <footer>scannerFM</footer>
+        </div>
+        <div class="quote-card">
+          <p>"Faa ji stands out with its rhythmic intensity and emotional weight."</p>
+          <footer>HypeHub Magazine</footer>
+        </div>
+        <div class="quote-card">
+          <p>"Hero One's Faa ji is about celebration and freedom. It makes you feel positive and connected to others."</p>
+          <footer>Landon Buford</footer>
+        </div>
       </div>
     </section>
 
+    <!-- ── Video & Motion Visualizers ────────────────────────────── -->
     <section class="section" id="videos">
-      <div class="section-head reveal">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">Video Assets</p>
+          <div class="mm3-eyebrow-tag">Visual Campaign Deck</div>
           <h2>Motion for the campaign.</h2>
         </div>
-        <p>Campaign visuals for press, booking, and licensing review, from short-form clips to the full studio feature.</p>
+        <p>Short-form visual identity shorts and conceptual reels engineered for digital campaigns, festival screens, and sync licensing pitch reels. <em>Click any tile to toggle playback.</em></p>
       </div>
-      <div class="video-grid reveal">
-        <article class="panel video-card featured">
-          <video controls preload="metadata" poster="Hero One design.png">
-            <source src="S/Hero one on the beat with Ksa.mp4" type="video/mp4">
-          </video>
-          <div class="panel-text"><span class="tag">Studio Video</span><h3>Hero One on the beat with Ksa</h3></div>
+
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <article class="video-card">
+          <div class="video-frame is-paused">
+            <video loop playsinline muted preload="metadata">
+              <source src="/assets/video/motion-ai-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-control" aria-label="Toggle video playback">
+              <div class="play-bubble">▶</div>
+            </div>
+          </div>
+          <div class="video-meta">
+            <span class="kicker">Visual Motion I</span>
+            <h4>Beats &amp; Blues Neural Reel</h4>
+            <p>Atmospheric visualizer sequence built for streaming canvas and festival LED backdrops.</p>
+          </div>
         </article>
-        <article class="panel video-card">
-          <video controls muted loop preload="metadata">
-            <source src="S/1 ai.mp4" type="video/mp4">
-          </video>
-          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip I</h3></div>
+
+        <!-- Video 2 -->
+        <article class="video-card">
+          <div class="video-frame is-paused">
+            <video loop playsinline muted preload="metadata">
+              <source src="/assets/video/motion-ai-2.mp4" type="video/mp4">
+            </video>
+            <div class="video-control" aria-label="Toggle video playback">
+              <div class="play-bubble">▶</div>
+            </div>
+          </div>
+          <div class="video-meta">
+            <span class="kicker">Visual Motion II</span>
+            <h4>Reality Music Kinetic Canvas</h4>
+            <p>High-contrast motion loop engineered for vertical engagement and social campaign assets.</p>
+          </div>
         </article>
-        <article class="panel video-card">
-          <video controls muted loop preload="metadata">
-            <source src="S/1 ai 2.mp4" type="video/mp4">
-          </video>
-          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip II</h3></div>
+
+        <!-- Video 3 -->
+        <article class="video-card">
+          <div class="video-frame is-paused">
+            <video loop playsinline muted preload="metadata">
+              <source src="/assets/video/motion-ai-3.mp4" type="video/mp4">
+            </video>
+            <div class="video-control" aria-label="Toggle video playback">
+              <div class="play-bubble">▶</div>
+            </div>
+          </div>
+          <div class="video-meta">
+            <span class="kicker">Visual Motion III</span>
+            <h4>Harmonic Lattice Signal</h4>
+            <p>Spatial motion reel derived from the 333BI OS signal field and DivineTouch presence aesthetic.</p>
+          </div>
         </article>
-        <article class="panel video-card">
-          <video controls muted loop preload="metadata">
-            <source src="S/1 ai 3.mp4" type="video/mp4">
-          </video>
-          <div class="panel-text"><span class="tag">Visual</span><h3>AI Clip III</h3></div>
-        </article>
-        <article class="panel video-card">
-          <video controls muted loop preload="metadata">
-            <source src="S/1 sip  ai.mp4" type="video/mp4">
-          </video>
-          <div class="panel-text"><span class="tag">Visual</span><h3>Sip Visual</h3></div>
+
+        <!-- Video 4 -->
+        <article class="video-card">
+          <div class="video-frame is-paused">
+            <video loop playsinline muted preload="metadata">
+              <source src="/assets/video/motion-sip-ai.mp4" type="video/mp4">
+            </video>
+            <div class="video-control" aria-label="Toggle video playback">
+              <div class="play-bubble">▶</div>
+            </div>
+          </div>
+          <div class="video-meta">
+            <span class="kicker">Visual Motion IV</span>
+            <h4>Sip Narrative Visual</h4>
+            <p>Narrative atmosphere piece capturing late-night studio reflection and songwriting cadence.</p>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Book, license, feature, or write.</h2>
-      </div>
-      <div class="reveal">
-        <div class="contact-list">
-          <a href="mailto:manuwaadebayo@gmail.com"><span>Email</span>manuwaadebayo@gmail.com</a>
-          <a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span>Spotify</span>Hero One</a>
-          <a href="https://music.apple.com/us/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span>Apple Music</span>Hero One</a>
-          <a href="https://soundcloud.com/heroone" target="_blank" rel="noreferrer"><span>SoundCloud</span>@heroone</a>
-          <a href="https://metameta3.com" target="_blank" rel="noreferrer"><span>Platform</span>metameta3.com</a>
+    <!-- ── Artist Rights & Registry ──────────────────────────────── -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="mm3-eyebrow-tag">Intellectual Property</div>
+          <h2>Official Rights &amp; Administration</h2>
         </div>
+        <p>Hero One is registered with global performance rights organizations and mechanical licensing agencies, ensuring verified catalog provenance.</p>
+      </div>
+
+      <div class="registry-grid">
+        <div class="registry-card">
+          <div class="registry-logo registry-logo--light">
+            <img src="/assets/img/brand/bmi.webp" alt="BMI Logo" width="120" height="42">
+          </div>
+          <strong>BMI</strong>
+          <span>Performing Rights Org · Songwriter &amp; Composer</span>
+        </div>
+
+        <div class="registry-card">
+          <div class="registry-logo registry-logo--light">
+            <img src="/assets/img/brand/soundexchange.webp" alt="SoundExchange Logo" width="130" height="40">
+          </div>
+          <strong>SoundExchange</strong>
+          <span>Digital Performance Royalty Administration</span>
+        </div>
+
+        <div class="registry-card">
+          <div class="registry-logo">
+            <img src="/assets/img/brand/ogs.webp" alt="Opulence Grandeur Sound Logo" width="110" height="50">
+          </div>
+          <strong>Opulence Grandeur Sound</strong>
+          <span>Publishing &amp; Creative Sound Production</span>
+        </div>
+
+        <div class="registry-card">
+          <div class="registry-logo">
+            <img src="/assets/img/brand/mral.webp" alt="Millenial Renaissance Art Limited Logo" width="120" height="50">
+          </div>
+          <strong>Millenial Renaissance Art</strong>
+          <span>Master Recording Rights &amp; Artist IP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact & Booking Desk ────────────────────────────────── -->
+    <section class="section" id="contact">
+      <div class="contact-grid">
+        <div>
+          <div class="mm3-eyebrow-tag">Direct Communication</div>
+          <h2>Book, license, feature, or write.</h2>
+          <p style="color: var(--text-muted); margin-top: 1.2rem; font-size: 1.05rem; line-height: 1.6;">
+            Direct channels for festival bookings, television and film sync licenses, editorial interviews, and executive inquiries. All correspondence reaches Adebayo Michael Manuwa and management.
+          </p>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-link" href="mailto:manuwaadebayo@gmail.com?subject=Hero%20One%20Inquiry%20from%20Portfolio">
+            <span>
+              <strong>Direct Booking &amp; Sync Desk</strong>
+              <span>manuwaadebayo@gmail.com</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="https://heroone.art" target="_blank" rel="noopener">
+            <span>
+              <strong>Official Artist Home</strong>
+              <span>heroone.art · Music, Philosophy, Gallery</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="https://heroone.art/music/" target="_blank" rel="noopener">
+            <span>
+              <strong>Complete Music Catalog &amp; Credits</strong>
+              <span>heroone.art/music · Full credits &amp; master records</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">
+            <span>
+              <strong>Spotify Artist Profile</strong>
+              <span>Hero One on Spotify</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="https://music.apple.com/us/artist/hero-one/1520370143" target="_blank" rel="noopener">
+            <span>
+              <strong>Apple Music</strong>
+              <span>Hero One on Apple Music</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="https://soundcloud.com/heroone" target="_blank" rel="noopener">
+            <span>
+              <strong>SoundCloud Creator Hub</strong>
+              <span>@heroone · 109K+ community plays</span>
+            </span>
+            <span class="contact-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Closing Glow Call to Action ──────────────────────────── -->
+    <section class="closing">
+      <div class="closing__glow" aria-hidden="true"></div>
+      <div class="mm3-eyebrow-tag">The Journey Continues</div>
+      <h2>Experience the Full Soundscape.</h2>
+      <p>Stream the master records, read the Variety in Observable Consciousness philosophy, and browse the high-resolution visual magazine archive on the main artist website.</p>
+      <div class="hero-actions">
+        <a class="button button--primary" href="https://heroone.art" target="_blank" rel="noopener">
+          <span>Enter heroone.art</span>
+        </a>
+        <a class="button button--ghost" href="https://heroone.art/philosophy/law/" target="_blank" rel="noopener">
+          <span>Read The Law ↗</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <strong>Hero One Press Kit</strong>
-    <span>2026 · Beats &amp; Blues Reality Music · Millenial Renaissance Art Limited</span>
+  <!-- ── Lightbox Dialog for Full-Res Inspection ───────────────── -->
+  <dialog id="lightbox" class="lightbox" aria-label="Receipt & Clipping Viewer">
+    <div class="lightbox__img">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <div class="lightbox__copy">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="kicker" id="lb-cat">Receipt</span>
+        <div class="lightbox__nav">
+          <button class="icon-button" id="lb-prev" aria-label="Previous receipt" type="button">←</button>
+          <button class="icon-button" id="lb-next" aria-label="Next receipt" type="button">→</button>
+          <button class="icon-button" id="lb-close" aria-label="Close dialog" type="button">✕</button>
+        </div>
+      </div>
+
+      <h3 id="lb-title">Receipt Title</h3>
+      <p id="lb-desc">Detailed receipt description.</p>
+
+      <dl class="meta-list">
+        <div>
+          <dt>Source / Outlet</dt>
+          <dd id="lb-outlet">Symphonic</dd>
+        </div>
+        <div>
+          <dt>Campaign Period</dt>
+          <dd id="lb-date">2025</dd>
+        </div>
+        <div>
+          <dt>Key Metric</dt>
+          <dd id="lb-metric" style="color: var(--gold-bright); font-weight: 600;">151K+ Streams</dd>
+        </div>
+      </dl>
+
+      <div style="margin-top: 1.2rem;">
+        <a class="button button--ghost button--sm" id="lb-download" href="#" target="_blank" rel="noopener" download style="width: 100%;">
+          <span>Download Original Asset</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ── 333BI OS Site Footer ────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/brand/heroone-wordmark.webp" alt="Hero One wordmark" width="140" height="40">
+        <p>
+          Beats &amp; Blues Reality Music by Adebayo Michael Manuwa.<br>
+          Press Kit, Streaming Telemetry &amp; Sync Licensing Portfolio powered by 333BI OS.
+        </p>
+      </div>
+
+      <nav aria-label="Portfolio Index">
+        <span class="kicker">Portfolio</span>
+        <a href="#analytics">Streaming Telemetry</a>
+        <a href="#press">Editorial Press</a>
+        <a href="#reviews">Sync &amp; Television</a>
+        <a href="#videos">Motion Deck</a>
+        <a href="#contact">Direct Booking</a>
+      </nav>
+
+      <nav aria-label="Ecosystem Links">
+        <span class="kicker">Main Ecosystem</span>
+        <a href="https://heroone.art" target="_blank" rel="noopener">heroone.art Home ↗</a>
+        <a href="https://heroone.art/music/" target="_blank" rel="noopener">Music Catalog ↗</a>
+        <a href="https://heroone.art/philosophy/law/" target="_blank" rel="noopener">The Law ↗</a>
+        <a href="https://heroone.art/gallery/" target="_blank" rel="noopener">Magazine Archive ↗</a>
+      </nav>
+
+      <nav aria-label="Streaming Profiles">
+        <span class="kicker">Streaming Channels</span>
+        <a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/us/artist/hero-one/1520370143" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://soundcloud.com/heroone" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+    </div>
+
+    <div class="footer-base">
+      <span>2026 · Beats &amp; Blues Reality Music · Millenial Renaissance Art Limited</span>
+      <span>333BI OS · Operational Telemetry Standard</span>
+    </div>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('on');
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
+  <script src="/assets/js/signal-field.js" defer></script>
+  <script src="/assets/js/portfolio.js" defer></script>
 </body>
 </html>
