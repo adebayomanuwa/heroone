@@ -6,7 +6,7 @@
 Both are taken from the cleaned Hero One logo (no dots or connectors), the same artwork as the Apple Music logo.
 
 ## Why the bolt
-YouTube shows the watermark at roughly 60–120 px in the corner of the player. At that size the H-bolt mark stays clear, while the full "Hero One" wordmark gets too small to read. The wordmark version is there in case you still want it.
+YouTube shows the watermark at roughly 60-120 px in the corner of the player. At that size the H-bolt mark stays clear, while the full "Hero One" wordmark gets too small to read. The wordmark version is there in case you still want it.
 
 ## Specs met
 - Square, 800 × 800 PNG (YouTube needs at least 150 × 150 and under 1 MB; each file is about 105 KB)

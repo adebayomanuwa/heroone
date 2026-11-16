@@ -130,7 +130,7 @@
         if (lbCat) lbCat.textContent = d.category || "Receipt";
         if (lbTitle) lbTitle.textContent = d.title || "Industry Proof";
         if (lbDesc) lbDesc.textContent = d.description || "";
-        if (lbDate) lbDate.textContent = d.date || "2025 – 2026";
+        if (lbDate) lbDate.textContent = d.date || "2025 - 2026";
         if (lbOutlet) lbOutlet.textContent = d.outlet || "Hero One Catalog";
         if (lbMetric) lbMetric.textContent = d.metric || "Verified";
         if (lbDownload) {
